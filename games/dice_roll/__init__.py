@@ -1,12 +1,6 @@
-"""Dice Roll Game Module"""
+"""Dice Roll Game - Main Module"""
 
-import random
-
-
-def roll_dice(num_dice=1, sides=6):
-    """Roll dice and return the sum and individual rolls."""
-    rolls = [random.randint(1, sides) for _ in range(num_dice)]
-    return sum(rolls), rolls
+from .dice import roll_dice
 
 
 def play():
@@ -16,11 +10,11 @@ def play():
     print("="*50)
     print("\nRules: Roll dice and try to get a higher number than the computer!")
     
-    # Player rolls
+    # Call roll_dice function for player
     player_sum, player_rolls = roll_dice(num_dice=2, sides=6)
     print(f"\nYou rolled: {player_rolls} = {player_sum}")
     
-    # Computer rolls
+    # Call roll_dice function for computer
     computer_sum, computer_rolls = roll_dice(num_dice=2, sides=6)
     print(f"Computer rolled: {computer_rolls} = {computer_sum}")
     

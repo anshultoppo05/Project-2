@@ -1,6 +1,7 @@
 """Main Game Menu - Calls different game modules"""
 
-from games import rock_paper_scissors, dice_roll
+from games.rock_paper_scissors import play as play_rps
+from games.dice_roll import play as play_dice
 
 
 def display_menu():
@@ -33,10 +34,10 @@ def main():
         
         if choice == '1':
             # Call rock-paper-scissors game function
-            rock_paper_scissors.play()
+            play_rps()
         elif choice == '2':
             # Call dice roll game function
-            dice_roll.play()
+            play_dice()
         elif choice == '3':
             print("\n👋 Thanks for playing! Goodbye!")
             break
