@@ -1,6 +1,6 @@
 """Main Game Menu"""
 
-from games import rock_paper_scissors, dice_roll
+from games import rock_paper_scissors
 
 
 def display_menu():
@@ -9,18 +9,17 @@ def display_menu():
     print("   WELCOME TO THE GAME MENU")
     print("="*50)
     print("\n1. Rock - Paper - Scissors")
-    print("2. Dice Roll Game")
-    print("3. Exit")
+    print("2. Exit")
     print("-"*50)
 
 
 def get_menu_choice():
     """Get valid menu choice from user."""
     while True:
-        choice = input("Enter your choice (1/2/3): ").strip()
-        if choice in ['1', '2', '3']:
+        choice = input("Enter your choice (1/2): ").strip()
+        if choice in ['1', '2']:
             return choice
-        print("Invalid choice! Please enter 1, 2, or 3.")
+print("Invalid choice! Please enter 1 or 2.")
 
 
 def main():
@@ -34,8 +33,6 @@ def main():
         if choice == '1':
             rock_paper_scissors.play()
         elif choice == '2':
-            dice_roll.play()
-        elif choice == '3':
             print("\n👋 Thanks for playing! Goodbye!")
             break
         
