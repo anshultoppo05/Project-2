@@ -1,7 +1,6 @@
-"""Main Game Menu - Calls different game modules"""
+"""Main Game Menu"""
 
-from games.rock_paper_scissors import play as play_rps
-from games.dice_roll import play as play_dice
+from games import rock_paper_scissors, dice_roll
 
 
 def display_menu():
@@ -25,7 +24,7 @@ def get_menu_choice():
 
 
 def main():
-    """Main function to run the game menu and call game functions."""
+    """Main function - runs the game menu."""
     print("\n🎮 WELCOME TO THE SIMPLE GAMES 🎮")
     
     while True:
@@ -33,16 +32,13 @@ def main():
         choice = get_menu_choice()
         
         if choice == '1':
-            # Call rock-paper-scissors game function
-            play_rps()
+            rock_paper_scissors.play()
         elif choice == '2':
-            # Call dice roll game function
-            play_dice()
+            dice_roll.play()
         elif choice == '3':
             print("\n👋 Thanks for playing! Goodbye!")
             break
         
-        # Ask if player wants to continue
         play_again = input("\nDo you want to play again? (yes/no): ").lower().strip()
         if play_again not in ['yes', 'y']:
             print("\n👋 Thanks for playing! Goodbye!")

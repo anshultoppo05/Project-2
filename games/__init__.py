@@ -1,1 +1,1 @@
-# Games Package
+"""Games Package"""
